@@ -83,7 +83,7 @@ def run_script(script_path: str, cwd: Path | str = '.') -> None:
     :param script_path: Absolute path to the script to run.
     :param cwd: The directory to run the script from.
     """
-    run_thru_shell = sys.platform.startswith('win')
+    run_thru_shell = False  # HACK: PD patched, see https://github.com/cookiecutter/cookiecutter/issues/1394
     if script_path.endswith('.py'):
         script_command = [sys.executable, script_path]
     else:
